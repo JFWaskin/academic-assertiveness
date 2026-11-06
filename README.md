@@ -37,7 +37,7 @@ tools:
   skills_dir: "~/.mini-agent/skills"   # the folder that contains academic-assertiveness/
 ```
 
-Requirements: Python 3.9+ (standard library only), `bash`, and optionally `rsync`.
+Requirements: Python 3.10+ (standard library only), `bash`, and optionally `rsync`.
 
 ## Use
 
