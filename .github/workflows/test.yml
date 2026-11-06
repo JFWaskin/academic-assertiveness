@@ -1,0 +1,25 @@
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python academic-assertiveness/scripts/test_audit.py
+      - run: python academic-assertiveness/scripts/audit.py academic-assertiveness/references/manuscript-example.md --summary
+      - name: installer smoke test (all harnesses, hooks, uninstall)
+        run: |
+          export CLAUDE_HOME=$RUNNER_TEMP/claude CODEX_HOME=$RUNNER_TEMP/codex MINI_AGENT_SKILLS=$RUNNER_TEMP/mini/skills
+          ./install.sh all --hooks
+          test -f $CLAUDE_HOME/skills/academic-assertiveness/SKILL.md
+          test -f $CODEX_HOME/skills/academic-assertiveness/agents/openai.yaml
+          test -f $MINI_AGENT_SKILLS/academic-assertiveness/SKILL.md
+          grep -q activate.py $CLAUDE_HOME/settings.json && grep -q activate.py $CODEX_HOME/hooks.json
+          ./install.sh all --hooks && test "$(grep -c activate.py $CODEX_HOME/hooks.json)" = 2
+          ./install.sh claude --uninstall && ! grep -q activate.py $CLAUDE_HOME/settings.json

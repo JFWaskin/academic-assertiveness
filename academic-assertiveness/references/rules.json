@@ -1,0 +1,178 @@
+[
+  {
+    "id": "D_DEFENSIVE_SCOPE",
+    "vale_name": "DefensiveScope",
+    "message": "Lead with the actual scope or contribution; keep a limitation only where it changes interpretation.",
+    "default": true,
+    "severity": 2,
+    "patterns": [
+      "\\b(?:this|the present|the current)\\s+(?:study|paper|thesis|dissertation|article|research|chapter|section|analysis|work)\\s+(?:does\\s+not|did\\s+not|is\\s+not\\s+intended\\s+to|makes\\s+no\\s+attempt\\s+to)\\s+(?:attempt|seek|aim|intend|try|claim|pretend)\\b",
+      "\\b(?:beyond|outside)\\s+the\\s+(?:scope|remit)\\s+of\\s+(?:this|the\\s+present|the)\\s+(?:study|paper|thesis|article|chapter|work)\\b",
+      "\\bwe\\s+(?:cannot|can\\s+not|are\\s+unable\\s+to)\\s+(?:discuss|address|explore|consider|cover)\\b",
+      "\\b(?:this\\s+(?:study|paper|thesis)|we|the\\s+thesis)\\s+(?:only|merely|simply)\\s+(?:aims?|seeks?|attempts?|tries)\\s+to\\b",
+      "\\b(?:we|the\\s+(?:thesis|study|author)|this\\s+(?:thesis|study|paper))\\s+(?:do|does|did)\\s+not\\s+(?:claim|pretend|purport)\\s+(?:to|that)\\b",
+      "\\bno\\s+claim\\s+(?:is|was|will\\s+be)\\s+made\\b",
+      "\\bis\\s+not\\s+(?:an\\s+admission|a\\s+concession|an\\s+apology|a\\s+retreat)\\b",
+      "\\bdoes\\s+not\\s+overstate\\b",
+      "\\brather\\s+than\\s+answering\\s+it\\b",
+      "\\bis\\s+not\\s+meant\\s+(?:to|as)\\b",
+      "\\bare\\s+meant\\s+to\\s+be\\s+read\\b",
+      "\\b(?:these|the|such)\\s+(?:boundaries|limits|caveats|constraints|restrictions)\\s+(?:specify|define|determine|show)\\s+(?:where|how\\s+far)\\b",
+      "\\bkeeps?\\s+the\\s+(?:discussion|interpretation|reading|claims?|argument)\\s+(?:proportionate|modest|cautious|in\\s+check|honest)\\b",
+      "\\b(?:is|are)\\s+(?:carried|reported|offered|presented)\\s+as\\s+(?:a\\s+)?candidates?\\s+rather\\s+than\\b",
+      "\\breported\\s+as\\s+such\\b",
+      "\\b(?:do|does)\\s+not\\s+yet\\s+establish\\b",
+      "\\bnot\\s+as\\s+a\\s+(?:\\w+\\s+){0,3}(?:signature|proof|demonstration|reconstruction)\\s+of\\b",
+      "\\bhow\\s+far\\s+(?:it|they|each\\s+\\w+|the\\s+\\w+)\\s+(?:can|may|should)\\s+be\\s+read\\b",
+      "\\brather\\s+than\\s+a\\s+demonstration\\s+that\\b"
+    ]
+  },
+  {
+    "id": "M_METADISCOURSE",
+    "vale_name": "ThroatClearing",
+    "message": "Delete throat-clearing and state the point; keep signposting only where it orients the reader.",
+    "default": true,
+    "severity": 1,
+    "patterns": [
+      "\\b(?:it|this|that)\\s+is\\s+(?:worth|important|necessary|useful)\\s+(?:to\\s+)?(?:stating|noting|note|emphasi[sz]ing|emphasi[sz]e|stressing|stress|pointing\\s+out|mentioning|repeating|recalling)\\b",
+      "\\bit\\s+(?:should|must|needs\\s+to)\\s+be\\s+(?:noted|stressed|emphasi[sz]ed|acknowledged|remembered|borne\\s+in\\s+mind|recognised|recognized|pointed\\s+out)\\b",
+      "\\b(?:needless\\s+to\\s+say|it\\s+goes\\s+without\\s+saying)\\b",
+      "\\bas\\s+(?:has\\s+(?:already\\s+)?been|was\\s+(?:already\\s+)?|already\\s+)(?:noted|stated|mentioned|discussed|emphasi[sz]ed)\\s+(?:above|earlier|before|previously)\\b",
+      "\\bwe\\s+(?:would\\s+like\\s+to|wish\\s+to)\\s+(?:note|emphasi[sz]e|stress|point\\s+out|acknowledge)\\b",
+      "\\bin\\s+(?:this|the\\s+present)\\s+(?:section|chapter|paper)\\s*,?\\s+(?:we|I|the\\s+thesis)\\s+(?:will\\s+)?(?:try|attempt)\\s+to\\b"
+    ]
+  },
+  {
+    "id": "S_CAUTION_SELF_LABEL",
+    "vale_name": "CautionSelfLabel",
+    "message": "The text labels its own caution. State the evidence and its limit instead of calling the reading cautious.",
+    "default": true,
+    "severity": 2,
+    "patterns": [
+      "\\b(?:cautious|restrained|conservative|modest|bounded|proportionate|careful|guarded|deliberately\\s+narrow|intentionally\\s+narrow)\\s+(?:[\\w-]+\\s+){0,2}?(?:reading|interpretation|account|picture|claim|integration|view|approach|inference|conclusion|stance|framing|position|logic)s?\\b",
+      "\\b(?:the|a)\\s+(?:defensible|safe|cautious|conservative|careful)\\s+(?:inference|reading|interpretation|conclusion|claim)\\b",
+      "\\b(?:intentionally|deliberately|purposely|consciously)\\s+(?:not|kept|weaker|narrower|limited|withheld|excluded|avoided|modest|conservative)\\b",
+      "\\bwarrants?\\s+(?:a\\s+)?(?:careful|cautious|circumspect)\\s+(?:reading|interpretation|treatment)\\b",
+      "\\b(?:is|remains)\\s+(?:therefore\\s+)?the\\s+(?:cautious|conservative|safe|careful)\\s+one\\b",
+      "\\b(?:consistent|empirical|coherent)\\s+(?:but|and)\\s+bounded\\b",
+      "\\b(?:this|the)\\s+conservative\\s+(?:boundary|choice|decision|rule)\\b",
+      "\\b(?:empirically|deliberately|carefully|tightly)\\s+bounded\\b"
+    ]
+  },
+  {
+    "id": "H_STACKED_HEDGES",
+    "vale_name": "HedgeStacking",
+    "message": "Check redundant hedging; keep one hedge where the evidence warrants uncertainty.",
+    "default": true,
+    "severity": 2,
+    "patterns": [
+      "\\b(?:may|might|could)\\s+(?:perhaps|possibly|potentially|conceivably|plausibly)\\b",
+      "\\b(?:perhaps|possibly|potentially)\\s+(?:may|might|could)\\b",
+      "\\b(?:would|could)\\s+(?:probably|possibly)\\s+(?:seem|suggest|indicate)\\b",
+      "\\b(?:seems?|appears?)\\s+to\\s+(?:perhaps\\s+|possibly\\s+|potentially\\s+)?(?:suggest|indicate|imply|hint)\\b",
+      "\\bit\\s+(?:may|might|could)\\s+be\\s+(?:possible|argued|suggested)\\b",
+      "\\b(?:suggests?|suggested|indicates?|implies)\\s+that\\s+[^.;:]{0,60}?\\b(?:may|might|could)\\b",
+      "\\b(?:tentatively|cautiously)\\s+(?:suggest|propose|conclude|infer|interpret)\\b",
+      "\\b(?:can|could)\\s+(?:only\\s+)?motivate\\b[^.;]{0,80}\\b(?:cannot|can\\s+not|do\\s+not|does\\s+not)\\b"
+    ]
+  },
+  {
+    "id": "W_WEAK_FRAMING",
+    "vale_name": "WeakFraming",
+    "message": "Weak or apologetic framing of the work's own contribution; state what it shows.",
+    "default": true,
+    "severity": 1,
+    "patterns": [
+      "\\bone\\s+(?:useful|possible|potential|small|modest)\\s+(?:example|lens|way|perspective|contribution|step)\\b",
+      "\\b(?:might|may|could)\\s+be\\s+(?:useful|helpful|interesting|of\\s+some\\s+(?:use|interest))\\b",
+      "\\b(?:hopefully|humbly)\\b",
+      "\\b(?:we|I)\\s+(?:hope|feel|believe)\\s+(?:that\\s+)?(?:this|these|our|the)\\b",
+      "\\b(?:a|some)\\s+(?:first|small|modest|preliminary)\\s+(?:attempt|step)\\b",
+      "\\bsuggests?\\s+a\\s+(?:practical\\s+)?direction\\s+rather\\s+than\\b",
+      "\\b(?:contributes|delivers|offers|provides)\\s+(?:only\\s+)?(?:a\\s+)?(?:cautious|modest|limited|bounded|restrained)\\b",
+      "\\b(?:is|are)\\s+best\\s+(?:understood|read|seen|described|treated)\\s+as\\b"
+    ]
+  },
+  {
+    "id": "V_VAGUE_QUANTIFIER",
+    "vale_name": "VagueQuantifiers",
+    "message": "Quantify from supplied evidence or keep a justified qualitative description.",
+    "default": true,
+    "severity": 1,
+    "patterns": [
+      "\\b(?:somewhat|to\\s+some\\s+(?:extent|degree)|to\\s+a\\s+(?:certain|large|great)\\s+(?:extent|degree)|in\\s+some\\s+(?:respects|ways|cases)|various|a\\s+number\\s+of|a\\s+(?:handful|couple)\\s+of|fairly|relatively\\s+(?:small|large|few|many|high|low)|quite\\s+(?:a\\s+)?(?:few|many|large|small|high|low))\\b"
+    ]
+  },
+  {
+    "id": "O_POSSIBLE_OVERCLAIM",
+    "vale_name": "UncalibratedCertainty",
+    "message": "Check whether certainty or reach exceeds the design and evidence.",
+    "default": true,
+    "severity": 3,
+    "patterns": [
+      "\\b(?:undoubtedly|unequivocally|incontrovertibly|indisputably|unambiguously|beyond\\s+(?:any|reasonable)\\s+doubt)\\b",
+      "\\b(?:conclusively|definitively|clearly)\\s+(?:proves?|demonstrates?|establish(?:es)?|shows?)\\b",
+      "\\b(?:proves?|proved|proven)\\s+that\\b",
+      "\\bit\\s+is\\s+(?:evident|obvious|clear|certain|beyond\\s+doubt)\\s+that\\b",
+      "\\bprotects?\\s+(?:the\\s+)?(?:[\\w=-]+\\s+){0,4}(?:evidence|results|findings|inference|conclusions?)\\s+(?:from|against)\\b",
+      "\\b(?:fully|completely|entirely)\\s+(?:explains?|accounts?\\s+for|captures?|resolves?|eliminates?)\\b"
+    ]
+  },
+  {
+    "id": "G_UNSUPPORTED_GAP_REVIEW",
+    "vale_name": "ResearchGap",
+    "message": "Verify novelty, priority or absence claims against the documented search scope.",
+    "default": true,
+    "severity": 2,
+    "patterns": [
+      "\\bno\\s+(?:(?:previous|prior|published|existing)\\s+)?(?:studies|study|research|work)\\s+(?:has|have)\\s+(?:yet\\s+)?(?:addressed|examined|investigated|explored|considered|integrated)\\b",
+      "\\b(?:the|a)\\s+first\\s+(?:study|paper|investigation|attempt|thesis|work)\\s+to\\b",
+      "\\bfor\\s+the\\s+first\\s+time\\b",
+      "\\bto\\s+(?:the\\s+best\\s+of\\s+)?(?:our|my|the\\s+author[’']s)\\s+knowledge\\b",
+      "\\b(?:little|limited|insufficient|scant)\\s+(?:research|attention|work|empirical\\s+work)\\s+(?:has\\s+been\\s+)?(?:devoted|paid|given|directed)\\s+to\\b",
+      "\\b(?:largely|completely|entirely|long)\\s+(?:overlooked|ignored|neglected|unexplored|understudied)\\b",
+      "\\bremains?\\s+(?:largely\\s+)?(?:unexplored|understudied|underexplored|under-researched|unaddressed)\\b",
+      "\\b(?:few|no)\\s+studies\\s+have\\b",
+      "\\b(?:this|our|the\\s+present|the\\s+current)\\s+(?:[\\w-]+\\s+){0,4}?(?:is|are|was|offers?|provides?|represents?|constitutes?)\\s+(?:a|an|the)\\s+(?:[\\w-]+\\s+)?(?:pioneering|unprecedented|groundbreaking|ground-breaking|novel|first)\\b"
+    ]
+  },
+  {
+    "id": "N_CAPABILITY_NEGATION_REVIEW",
+    "vale_name": "CapabilityNegation",
+    "message": "Retain valid negation and limitations; change only defensive self-description.",
+    "default": false,
+    "severity": 1,
+    "patterns": [
+      "\\b(?:cannot|can't|can\\s+not|unable\\s+to)\\b"
+    ]
+  },
+  {
+    "id": "Z_ZH_DEFENSIVE",
+    "vale_name": "ChineseDefensive",
+    "message": "中文防御性表述或冗余模糊语：先陈述贡献，保留影响解读的局限。",
+    "default": true,
+    "severity": 2,
+    "patterns": [
+      "本(?:文|研究|章|节)(?:并)?(?:不|无意|并非|不是)(?:试图|旨在|打算|声称|意在)",
+      "超出(?:了)?本(?:文|研究|章)(?:的)?(?:研究|讨论)?范围",
+      "(?:需要|应当|必须)(?:指出|说明|强调|承认)的是",
+      "值得(?:注意|指出|一提|强调)的是",
+      "不可否认(?:的是)?",
+      "(?:可能|或许|也许)(?:或许|也许|可能|大概)",
+      "在一定程度上(?:可能|或许|也许)",
+      "似乎(?:可能|或许)",
+      "(?:谨慎|保守|审慎)(?:地)?(?:解读|解释|认为|推断|看待)"
+    ]
+  },
+  {
+    "id": "Z_ZH_GAP_OVERCLAIM",
+    "vale_name": "ChineseGapOverclaim",
+    "message": "核查首创、空白或确定性表述是否有文献检索范围与证据支撑。",
+    "default": true,
+    "severity": 2,
+    "patterns": [
+      "首次|首创|填补(?:了)?(?:国内外)?(?:研究)?(?:的)?空白|尚无(?:研究|学者)|鲜有(?:研究|学者)|前所未有",
+      "毫无疑问|无可辩驳|充分证明|完全证实|彻底解决|必然导致"
+    ]
+  }
+]

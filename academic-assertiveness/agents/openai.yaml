@@ -1,0 +1,6 @@
+interface:
+  display_name: "Academic Assertiveness"
+  short_description: "Direct academic prose calibrated to the evidence"
+  default_prompt: "Use $academic-assertiveness to revise this academic passage while preserving its evidence and limitations."
+policy:
+  allow_implicit_invocation: true
